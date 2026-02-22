@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Libro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 th:text="${libro.id} != null ? 'Editar libro' : 'Nuevo libro'"></h1>
+    <form th:action="${libro.id} != null ? @{'/ui/libros/' + ${libro.id}} : @{/ui/libros}" method="post">
+      <label>Titulo<br><input name="titulo" required th:value="${libro.titulo}"></label>
+      <label>ISBN<br><input name="isbn" th:value="${libro.isbn}"></label>
+      <label>Categoria<br><input name="categoria" th:value="${libro.categoria}"></label>
+      <label>Publicado<br><input type="date" name="publicadoEn" th:value="${libro.publicadoEn}"></label>
+      <label>Stock<br><input type="number" min="0" name="stock" th:value="${libro.stock}"></label>
+      <p><button type="submit">Guardar</button> <a href="/ui/libros">Cancelar</a></p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editar prestamo</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Editar prestamo</h1>
+    <form th:action="@{/ui/prestamos/{id}(id=${prestamo.id})}" method="post">
+      <p><strong>ID:</strong> <span th:text="${prestamo.id}"></span></p>
+      <p><strong>Libro:</strong> <span th:text="${prestamo.libro != null ? prestamo.libro.titulo : ''}"></span></p>
+      <p><strong>Miembro:</strong> <span th:text="${prestamo.miembro != null ? prestamo.miembro.nombre : ''}"></span></p>
+      <label>Estado<br>
+        <select name="estado">
+          <option value="" selected>Sin cambio</option>
+          <option th:each="e : ${estados}" th:value="${e}" th:text="${e}"></option>
+        </select>
+      </label>
+      <label>Fecha vencimiento<br>
+        <input type="datetime-local" name="fechaVencimiento"
+               th:value="${prestamo.fechaVencimiento != null ? #temporals.format(prestamo.fechaVencimiento, 'yyyy-MM-dd''T''HH:mm') : ''}">
+      </label>
+      <label>Fecha devolucion<br>
+        <input type="datetime-local" name="fechaDevolucion"
+               th:value="${prestamo.fechaDevolucion != null ? #temporals.format(prestamo.fechaDevolucion, 'yyyy-MM-dd''T''HH:mm') : ''}">
+      </label>
+      <p><button type="submit">Guardar</button> <a href="/ui/prestamos">Cancelar</a></p>
+    </form>
+  </div>
+</body>
+</html>
