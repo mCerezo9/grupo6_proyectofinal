@@ -32,7 +32,6 @@ Audit log:
 ```
 
 Comentario de libro:
-
 ```json
 {
 	"libroId": 2,
@@ -70,17 +69,14 @@ Endpoints principales:
 # Library Service (Spring Boot)
 
 Este módulo es un esqueleto de servicio Spring Boot para la práctica: gestiona `Libro`, `Miembro` y `Prestamo` con persistencia SQL (Postgres) y documentos de auditoría en MongoDB.
-
 Requisitos mínimos: Docker y Maven.
 
 Arrancar bases (en la raíz del repo):
-
 ```bash
 docker-compose up -d
 ```
 
 Construir y ejecutar la app:
-
 ```bash
 cd library-service
 mvn spring-boot:run
@@ -89,13 +85,11 @@ mvn spring-boot:run
 Endpoints útiles (ejemplos):
 
 - Listar libros (paginado):
-
 ```bash
 curl 'http://localhost:8080/api/libros?page=0&size=5&sort=titulo,asc'
 ```
 
 - Crear préstamo (registra auditoría en Mongo):
-
 ```bash
 curl -X POST http://localhost:8080/api/prestamos \
   -H 'Content-Type: application/json' \
@@ -104,13 +98,11 @@ curl -X POST http://localhost:8080/api/prestamos \
 ```
 
 - Listar préstamos:
-
 ```bash
 curl http://localhost:8080/api/prestamos
 ```
 
 Comprobación en Mongo (desde host):
-
 ```bash
 docker exec -it <mongo_container> mongosh
 use librarydb
