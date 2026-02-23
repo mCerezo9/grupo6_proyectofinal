@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Miembro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 th:text="${miembro.id} != null ? 'Editar miembro' : 'Nuevo miembro'"></h1>
+    <form th:action="${miembro.id} != null ? @{'/ui/miembros/' + ${miembro.id}} : @{/ui/miembros}" method="post">
+      <label>Nombre<br><input name="nombre" required th:value="${miembro.nombre}"></label>
+      <label>Email<br><input name="email" th:value="${miembro.email}"></label>
+      <label>Telefono<br><input name="telefono" th:value="${miembro.telefono}"></label>
+      <label>Fecha alta<br><input type="date" name="fechaAlta" th:value="${miembro.fechaAlta}"></label>
+      <p><button type="submit">Guardar</button> <a href="/ui/miembros">Cancelar</a></p>
+    </form>
+  </div>
+</body>
+</html>
