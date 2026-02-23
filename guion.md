@@ -21,7 +21,7 @@
 ---
 
 ## 🎬 PARTE 2: El Modelo SQL y MongoDB
-**Orador:** Yoni
+**Orador:** Cerezo
 **Diapositiva:** 2 (Modelo SQL) y 3 (¿Por qué Mongo?)
 **Tiempo:** 2 - 2.5 minutos
 
@@ -39,14 +39,14 @@
 ---
 
 ## 🎬 PARTE 3: Demostración Práctica (En Vivo)
-**Orador:** Cerezo
+**Orador:** Yoni
 **Diapositiva:** 4 (Integración y CRUD) y 5 (Consultas Avanzadas)
 **Tiempo:** 4 - 5 minutos
 
 > 💡 **TICK RÚBRICA (Integración SQL ↔ Mongo - 2pts):** Aquí demostramos físicamente la integración "clara en flujos".
 
 ### Diapositiva 4: Integración SQL - MongoDB
-> "Vamos a ver cómo funciona esto en directo. Hemos seguido los pasos de nuestro README para arrancar. Lo primero es ver cómo ambos mundos, el SQL y el de Mongo, se sincronizan solos. Voy a crear un préstamo como si fuera un usuario, desde la web."
+> "Vamos a ver cómo funciona esto en directo. Hemos seguido los pasos de nuestro README para arrancar. Lo primero es ver cómo ambos mundos, el SQL y el de Mongo, se sincronizan solos. Voy a crear un usuario, desde la web."
 
 *(Acción: Cerezo entra en la web y crea un prestamo con cualquier usuario y lo comprueba en `/api/prestamos`)*
 > "El CRUD operativo transacciona en SQL correctamente. Ahora, si acudimos a nuestra instancia de MongoDB con un simple `find()`, observamos cómo el evento se ha sincronizado devolviendo un documento JSON estructurado en `audit_logs` con nuestra trazabilidad."
